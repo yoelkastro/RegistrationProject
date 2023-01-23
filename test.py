@@ -47,4 +47,8 @@ newRot[0] = np.append(tf_param.b[0], [tf_param.t[0]], axis=0)#tf_param.t[0]
 newRot[1] = np.append(tf_param.b[1], [tf_param.t[1]], axis=0)
 newRot[2] = np.array([0, 0, 1])
 
+n = newRot[0][1]
+newRot[0][1] = newRot[1][0]
+newRot[1][0] = n
+
 np.save("/home/yoelkastro/Desktop/2022-2023/3rd Year Project/reg_visualization_tool/data/transform.npy",newRot)
